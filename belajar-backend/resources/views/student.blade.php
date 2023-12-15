@@ -6,8 +6,9 @@
 @section('container')
     <h1>Halaman Students</h1>
 
-    <div class="my-3">
+    <div class="my-3 d-flex justify-content-between">
         <a href="student-add" class="btn btn-primary">Add Data</a>
+        <a href="/student-deleted" class="btn btn-info">Deleted</a>
     </div>
 
     @if (Session::has('status'))
