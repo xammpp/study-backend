@@ -4,11 +4,20 @@
 @section('title', 'Student')
 
 @section('container')
-    <h1>Halaman Students</h1>
+    <h1 class="mt-3">Halaman Students</h1>
 
     <div class="my-3 d-flex justify-content-between">
         <a href="student-add" class="btn btn-primary">Add Data</a>
-        <a href="/student-deleted" class="btn btn-info">Deleted</a>
+        <a href="/student-deleted" class="btn btn-warning text-white">Deleted</a>
+    </div>
+
+    <div class="my-4">
+        <form action="" method="GET">
+            <div class="input-group flex-nowrap">
+                <span class="input-group-text" id="addon-wrapping"><i class="fa-solid fa-magnifying-glass"></i></span>
+                <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
+            </div>
+        </form>
     </div>
 
     @if (Session::has('status'))
@@ -43,5 +52,9 @@
             @endforeach
         </tbody>
     </table>
+
+    <div class="my-4">
+        {{ $studentList->links() }}
+    </div>
 
 @endsection
