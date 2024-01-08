@@ -14,8 +14,8 @@
     <div class="my-4">
         <form action="" method="GET">
             <div class="input-group flex-nowrap">
-                <span class="input-group-text" id="addon-wrapping"><i class="fa-solid fa-magnifying-glass"></i></span>
-                <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
+                <input type="text" class="form-control" placeholder="Search here..." name="keyword">
+                <button class="btn btn-primary input-group-text" id="addon-wrapping"><i class="fa-solid fa-magnifying-glass"></i></button>
             </div>
         </form>
     </div>
@@ -33,6 +33,7 @@
                 <th>Name</th>
                 <th>Gender</th>
                 <th>NIM</th>
+                <th>Class</th>
                 <th>Action</th>
             </tr>
         </thead>
@@ -43,6 +44,7 @@
                 <td>{{ $data -> name }}</td>
                 <td>{{ $data -> gender }}</td>
                 <td>{{ $data -> nim }}</td>
+                <td>{{ $data -> class -> name }}</td>
                 <td>
                     <a class="btn btn-success" href="student-detail/{{ $data->id }}" role="button">Detail</a>
                     <a class="btn btn-warning" href="student-edit/{{ $data->id }}" role="button">Edit</a>
@@ -54,7 +56,7 @@
     </table>
 
     <div class="my-4">
-        {{ $studentList->links() }}
+        {{ $studentList->withQueryString()->links() }}
     </div>
 
 @endsection

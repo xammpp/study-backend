@@ -19,6 +19,7 @@ class Student extends Model
         'gender',
         'nim',
         'class_id',
+        'image',
     ];
 
     public function class(): BelongsTo

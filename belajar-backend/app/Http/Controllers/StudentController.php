@@ -11,9 +11,19 @@ use App\Http\Requests\StudentCreateRequest;
 
 class StudentController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $student = Student::paginate(15);
+        $keyword = $request->keyword;
+
+        $student = Student::with('class')
+            ->where('name', 'LIKE', '%'.$keyword.'%')
+            ->orWhere('gender', $keyword)
+            ->orWhere('nim', 'LIKE', '%'.$keyword.'%')
+            ->orWhereHas('class', function($query) use($keyword) {
+                $query->where('name', 'LIKE', '%'.$keyword.'%');
+            })
+            ->paginate(10);
+
         return view('student', ['studentList' => $student]);
     }
 
@@ -32,6 +42,14 @@ class StudentController extends Controller
 
     public function store(StudentCreateRequest $request)
     {
+        $newName = '';
+        if ($request->file('image')) {
+            $extension = $request->file('image')->getClientOriginalExtension();
+            $newName = $request->name.'-'.now()->timestamp.'.'.$extension;
+            $request->file('photo')->storeAs('image', $newName);
+        }
+
+        $request['image'] = $newName;
         $student = Student::create($request->all());
 
         if($student) {

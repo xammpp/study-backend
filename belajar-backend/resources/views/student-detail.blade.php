@@ -9,6 +9,10 @@
         <h2>Detail Student dari {{ $student->name }}</h2>
     </div>
 
+    <div class="my-4">
+        <img src="{{ asset('storage/image/' .$student->image) }}" alt="">
+    </div>
+
     <div class="mt-5 mb-5">
         <table class="table table-bordered">
             <tr>
