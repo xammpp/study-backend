@@ -13,7 +13,7 @@
         @if($student->image != '')
             <img src="{{ asset('storage/photo/' .$student->image) }}" alt="" width="200">
         @else
-            <img src="{{ asset('images/user.png') }}" alt="" width="200">
+            <img src="{{ asset('images/Niken Baru.png') }}" alt="" width="200">
         @endif
     </div>
 
