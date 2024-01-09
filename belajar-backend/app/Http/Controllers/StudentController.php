@@ -46,7 +46,7 @@ class StudentController extends Controller
         if ($request->file('image')) {
             $extension = $request->file('image')->getClientOriginalExtension();
             $newName = $request->name.'-'.now()->timestamp.'.'.$extension;
-            $request->file('photo')->storeAs('image', $newName);
+            $request->file('image')->storeAs('image', $newName);
         }
 
         $request['image'] = $newName;
