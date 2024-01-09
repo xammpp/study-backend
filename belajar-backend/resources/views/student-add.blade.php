@@ -49,9 +49,9 @@
         </div>
 
         <div class="mb-3">
-            <label for="image">Image</label>
+            <label for="photo">Image</label>
             <div class="input-group">
-                <input type="file" class="form-control" id="image" name="image">
+                <input type="file" class="form-control" id="photo" name="photo">
             </div>
         </div>
 

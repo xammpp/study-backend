@@ -9,8 +9,12 @@
         <h2>Detail Student dari {{ $student->name }}</h2>
     </div>
 
-    <div class="my-4">
-        <img src="{{ asset('storage/image/' .$student->image) }}" alt="">
+    <div class="my-4 d-flex justify-content-center">
+        @if($student->image != '')
+            <img src="{{ asset('storage/photo/' .$student->image) }}" alt="" width="200">
+        @else
+            <img src="{{ asset('images/user.png') }}" alt="" width="200">
+        @endif
     </div>
 
     <div class="mt-5 mb-5">

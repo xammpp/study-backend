@@ -43,10 +43,10 @@ class StudentController extends Controller
     public function store(StudentCreateRequest $request)
     {
         $newName = '';
-        if ($request->file('image')) {
-            $extension = $request->file('image')->getClientOriginalExtension();
+        if ($request->file('photo')) {
+            $extension = $request->file('photo')->getClientOriginalExtension();
             $newName = $request->name.'-'.now()->timestamp.'.'.$extension;
-            $request->file('image')->storeAs('image', $newName);
+            $request->file('photo')->storeAs('photo', $newName);
         }
 
         $request['image'] = $newName;
