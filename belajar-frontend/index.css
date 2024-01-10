@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Handlee&display=swap');
+
+body {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/iceDeath.jpg');
+  background-size: cover;
+}
+
+.home-parent-div {
+  width: 1000px;
+  margin: auto;
+  margin-top: 200px;
+  font-family: 'Handlee', cursive;
+}
+
+.home-children-div {
+  color: white;
+  width: 50%;
+}
+
+.home-link-content {
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+
+#left-link-home {
+  margin-top: 30px;
+}
+
+.home-link-content a {
+  color: white;
+  text-decoration: none;
+  letter-spacing: 8px;
+  font-size: 24px;
+}
+
+.home-children-div h2 {
+  font-size: 50px;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.home-children-div p {
+  text-align: center;
+}
+
+.home-to-about {
+  border: 1px solid white;
+  background-color: transparent;
+  color: white;
+  padding: 14px 28px;
+  font-size: 16px;
+  text-decoration: none;
+  border-radius: 15px;
+}
+
+a.home-to-about {
+  margin-top: 4px;
+}
+
+.to-about {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
+.clearfix {
+  content: '';
+  clear: both;
+  display: table;
+}
