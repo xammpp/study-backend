@@ -13,7 +13,7 @@ goa_kosong = ' '.join(goa_kosong)
 goa = ' '.join(goa)
 
 name_user = input("Masukkan nama kamu: ")
-print(f'''
+print(f''' 
 Halo {name_user}, kamu akan menebak posisi ular yang benar.
 {goa_kosong}
 ''')
