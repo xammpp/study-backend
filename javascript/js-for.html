@@ -7,8 +7,16 @@
   </head>
   <body>
     <script>
-      for (let i = 1; i <= 10; i++) {
-        console.log('hello world ' + i);
+      let jumlahAngkot = 10;
+      let angkotBeroperasi = 6;
+      let noAngkot = 1;
+
+      while (noAngkot <= angkotBeroperasi) {
+        console.log(`Angkot nomor ${noAngkot} beroperasi dengan baik.`);
+        noAngkot++;
+      }
+      for (noAngkot = angkotBeroperasi + 1; noAngkot <= jumlahAngkot; noAngkot++) {
+        console.log(`Angkot nomor ${noAngkot} sedang tidak beroperasi.`);
       }
     </script>
   </body>
